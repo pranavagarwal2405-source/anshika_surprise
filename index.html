@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Babyy Anshika ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#0d0d1f;
+color:white;
+overflow-x:hidden;
+text-align:center;
+}
+
+.page{
+display:none;
+min-height:100vh;
+padding:40px 20px;
+}
+
+.active{
+display:block;
+}
+
+h1{
+color:#ff6b9e;
+}
+
+button{
+padding:15px 30px;
+border:none;
+border-radius:30px;
+background:#ff6b9e;
+color:white;
+font-size:18px;
+margin:10px;
+cursor:pointer;
+}
+
+input{
+padding:15px;
+border-radius:20px;
+border:none;
+width:250px;
+text-align:center;
+}
+
+.gallery img{
+width:250px;
+border-radius:20px;
+margin:15px;
+box-shadow:0 0 20px rgba(255,255,255,0.2);
+}
+
+.card{
+background:rgba(255,255,255,0.1);
+padding:20px;
+margin:20px auto;
+max-width:500px;
+border-radius:20px;
+}
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+to{
+transform:translateY(-110vh);
+opacity:0;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<audio autoplay loop>
+<source src="meri-zindagi-hai-tu.mp3" type="audio/mpeg">
+</audio>
+
+<div id="p1" class="page active">
+<h1>🔐 A Special Message</h1>
+<p>A message from Pranav's heart ❤️</p>
+<p>Password Hint: The girl who owns my heart.</p>
+
+<input id="pass" placeholder="Enter Password">
+<br><br>
+<button onclick="checkPass()">Open</button>
+</div>
+
+<div id="p2" class="page">
+<h1>Welcome My Babyy Anshika ❤️</h1>
+
+<p>Made with love by Pranav.</p>
+
+<button onclick="nextPage('p3')">
+Open My Heart ❤️
+</button>
+</div>
+
+<div id="p3" class="page">
+<h1>I'm Sorry 🥺</h1>
+
+<p>
+Heyy my lovee,<br><br>
+
+Sorryy for everything I did.<br><br>
+
+I know aap merse kaafi zyada gussa ho but I can't live without you. You are my whole lifelinee.<br><br>
+
+Please ab itna gussa mat raho… aa jao mere paas.<br><br>
+
+I miss your smile, your talks and every little moment with you.<br><br>
+
+Sorryy my girl, my babyy Anshika ❤️❤️ <br><br>
+— Yours, Pranav ❤️
+
+</p>
+
+<button onclick="nextPage('p4')">
+Our Memories 📸
+</button>
+</div>
+
+<div id="p4" class="page">
+<h1>Our Memories ❤️</h1>
+
+<p>
+21 June 2025 ❤️<br>
+The day I met the girl who changed my world.
+</p>
+
+<div class="gallery">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+</div>
+
+<p>
+6 April 2026 ❤️<br>
+Our last meeting till today… but hopefully not our last chapter.
+</p>
+
+<button onclick="nextPage('p5')">
+Why I Love You ❤️
+</button>
+</div>
+
+<div id="p5" class="page">
+<h1>Reasons I Love You 🌹</h1>
+
+<div class="card">❤️ Your Smile</div>
+<div class="card">❤️ Your Care</div>
+<div class="card">❤️ Our Memories</div>
+<div class="card">❤️ The Happiness You Bring</div>
+<div class="card">❤️ Simply Because You're Anshika</div>
+
+<button onclick="nextPage('p6')">
+Final Message ❤️
+</button>
+</div>
+
+<div id="p6" class="page">
+<h1>Will You Forgive Me? 🥺❤️</h1>
+
+<p>
+Can we write the next chapter together?
+</p>
+
+<button onclick="yes()">Yes ❤️</button>
+
+<div id="last" style="display:none;">
+<h2>
+Thank you, my love ❤️
+<br><br>
+Forever Yours,
+<br>
+Pranav ❤️
+</h2>
+</div>
+</div>
+
+<script>
+
+function checkPass(){
+let p=document.getElementById("pass").value;
+
+if(p.toLowerCase()=="anshika"){
+nextPage("p2");
+}else{
+alert("Wrong Password ❤️");
+}
+}
+
+function nextPage(id){
+document.querySelectorAll(".page").forEach(p=>{
+p.classList.remove("active");
+});
+document.getElementById(id).classList.add("active");
+}
+
+function yes(){
+document.getElementById("last").style.display="block";
+}
+
+function createHeart(){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=
+(Math.random()*5+5)+"s";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+h.remove();
+},10000);
+}
+
+setInterval(createHeart,500);
+
+</script>
+
+</body>
+</html>
